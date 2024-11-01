@@ -83,3 +83,15 @@ footer {
     margin-left: auto;
     background: #030615;
 }
+
+.sidebarContents div {
+    flex: 1;
+}
+
+.sidebarContents button {
+    background: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    margin-right: auto;
+}

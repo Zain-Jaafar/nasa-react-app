@@ -8,6 +8,9 @@ export default function SideBar() {
                     <p>Description</p>
                     <p>asdfaskdfjalks djfaskdjfla skdjf asdf jalsf jlkadf</p>
                 </div>
+                <button>
+                    <i className="fa-solid fa-right-long"></i>
+                </button>
             </div>
         </div>
     );

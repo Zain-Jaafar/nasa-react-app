@@ -1,13 +1,13 @@
 export default function Footer(props) {
-    const { handleToggleModal } = props
+    const { data, handleToggleModal } = props
 
 
     return (
         <footer>
             <div className="bgGradient"></div>
             <div>
-                <h2>The Brutal Martian Landscape</h2>
                 <h1>APOD Project</h1>
+                <h2>{data?.title}</h2>
             </div>
 
             <button onClick={handleToggleModal}>

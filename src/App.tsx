@@ -17,9 +17,24 @@ function App() {
             const NASA_API_KEY = import.meta.env.VITE_NASA_API_KEY
             const url = "https://api.nasa.gov/planetary/apod" + `?api_key=${NASA_API_KEY}`
 
+            const today = (new Date()).toDateString()
+            const localKey = `NASA-${today}`
+            
+            if (localStorage.getItem(localKey)) {
+                const apiData = JSON.parse(localStorage.getItem(localKey))
+                setData(apiData)
+                console.log("fetched from cache")
+                return
+            }
+
+            localStorage.clear()
+
+
             try {
                 const response = await fetch(url)
                 const apiData = await response.json()
+                localStorage.setItem(localKey, JSON.stringify(apiData))
+                console.log("fetched from api")
                 setData(apiData)
                 console.log("DATA\n", apiData)
             } catch (error) {
